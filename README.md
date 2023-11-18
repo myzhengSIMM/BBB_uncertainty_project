@@ -1,16 +1,32 @@
 # BBB_uncertainty_project
+This repository is a fork from https://github.com/tongxiaochu/BBB_uncertainty_project.
+
 Code for "Blood–Brain Barrier Penetration Prediction Enhanced by Uncertainty Estimation"
 
-#### Process test dataset and save features
+### Environment setup
+```bash
+conda create -n BBB_uncertainty python==3.9
+conda activate BBB_uncertainty
+conda install -c conda-forge rdkit
+conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c conda-forge tqdm
+conda install -c conda-forge dill
+conda install -c conda-forge seaborn
+pip install descriptastorus
+conda install -c conda-forge scikit-learn
+conda install -c conda-forge requests
 ```
+
+### Process test dataset and save features
+```bash
 python save_features.py --data_path ../dataset/Sdata-process-flow-step5-testdata.csv
                         --features_generator rdkit_2d_normalized
                         --save_path ../dataset/Sdata-process-flow-step5-testdata.npz
                         --sequential
 ```
 
-#### Estimate uncertainty for S-data by GROVER
-```
+### Estimate uncertainty for S-data by GROVER
+```bash
 python main.py GROVER --data_path dataset/MoleculeNet-BBBP-process-flow-step5-traindata.csv
                       --features_path dataset/MoleculeNet-BBBP-process-flow-step5-traindata.npz
                       --separate_test_path dataset/Sdata-process-flow-step5-testdata.csv
@@ -41,8 +57,8 @@ python main.py GROVER --data_path dataset/MoleculeNet-BBBP-process-flow-step5-tr
                       --save_dir ./BBBp_results/GROVER
 ```
 
-#### Estimate uncertainty for S-data by AttentiveFP
-```
+### Estimate uncertainty for S-data by AttentiveFP
+```bash
 python main.py AttentiveFP --data_path dataset/MoleculeNet-BBBP-process-flow-step5-traindata.csv
                            --separate_test_path dataset/Sdata-process-flow-step5-testdata.csv
                            --dataset_type classification
@@ -51,23 +67,23 @@ python main.py AttentiveFP --data_path dataset/MoleculeNet-BBBP-process-flow-ste
                            --save_dir ./BBBp_results/AttentiveFP
 ```
 
-#### Estimate uncertainty for S-data by RL/MLP
-```
+### Estimate uncertainty for S-data by RL/MLP
+```bash
 python main.py MLP --data_path dataset/MoleculeNet-BBBP-process-flow-step5-traindata.csv
                    --separate_test_path dataset/Sdata-process-flow-step5-testdata.csv
                    --feature_type PCP
                    --dataset_type classification
                    --ensemble_size 5
-                   --save_dir ./BBBp_results/MLP(PCP)
+                   --save_dir "./BBBp_results/MLP(PCP)"
 ```
 
-#### Draw figures for uncertainty analysis plot 
-```
+### Draw figures for uncertainty analysis plot 
+```bash
 python uncertainty_analysis_plot.py --model_type GROVER
                                     --save_dir ../BBBp_results/GROVER
 ```
 
-#### Model performance for all BBBp models
-```
+### Model performance for all BBBp models
+```bash
 python model_performance_plot.py
 ```
