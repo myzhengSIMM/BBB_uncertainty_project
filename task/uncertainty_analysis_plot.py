@@ -5,10 +5,13 @@ Created on Wed Aug 19 11:26:09 2020
 @author: amberxtli
 """
 import os
+import sys
 import numpy as np
 import pandas as pd
 
 from argparse import ArgumentParser
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from scipy.stats import spearmanr
 from sklearn.preprocessing import MinMaxScaler
