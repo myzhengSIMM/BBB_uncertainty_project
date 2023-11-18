@@ -133,7 +133,8 @@ def AttentiveFP_featurize_loader(network, dataset, feature_dicts, args):
     return torch.cat(features).squeeze().cpu()
 
 def MLP_featurize_loader(x_data, model, layer=0):
-    L = ACTIVATIONS['relu'](np.matmul(x_data, model.coefs_[layer]) + model.intercepts_[layer])
+    L = np.matmul(x_data, model.coefs_[layer]) + model.intercepts_[layer]
+    ACTIVATIONS['relu'](L)
     layer += 1
     if layer >= len(model.coefs_) - 1:
         return L
