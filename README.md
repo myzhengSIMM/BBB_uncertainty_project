@@ -7,8 +7,8 @@ Code for "Blood–Brain Barrier Penetration Prediction Enhanced by Uncertainty E
 ```bash
 conda create -n BBB_uncertainty python==3.9
 conda activate BBB_uncertainty
-conda install -c conda-forge rdkit
 conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c conda-forge rdkit
 conda install -c conda-forge tqdm
 conda install -c conda-forge dill
 conda install -c conda-forge seaborn
