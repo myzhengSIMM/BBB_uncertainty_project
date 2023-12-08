@@ -3,6 +3,9 @@ This repository is a fork from https://github.com/tongxiaochu/BBB_uncertainty_pr
 
 Code for "Blood–Brain Barrier Penetration Prediction Enhanced by Uncertainty Estimation"
 
+### Overview
+Blood–brain barrier is a pivotal factor to be considered in the process of central nervous system (CNS) drug development, and it is of great significance to rapidly explore the blood–brain barrier permeability (BBBp) of compounds in silico in early drug discovery process. Here, we focus on whether and how uncertainty estimation methods improve in silico BBBp models. We briefly surveyed the current state of in silico BBBp prediction and uncertainty estimation methods of deep learning models, and curated an independent dataset to determine the reliability of the state-of-the-art algorithms. The results exhibit that, despite the comparable performance on BBBp prediction between graph neural networks-based deep learning models and conventional physicochemical-based machine learning models, the GROVER-BBBp model shows greatly improvement when using uncertainty estimations.
+
 ### Environment setup
 ```bash
 conda create -n BBB_uncertainty python==3.9
@@ -86,4 +89,22 @@ python uncertainty_analysis_plot.py --model_type GROVER
 ### Model performance for all BBBp models
 ```bash
 python model_performance_plot.py
+```
+
+### Citation
+Please cite our paper if you find it helpful. Thank you!
+
+Tong, X., Wang, D., Ding, X. et al. Blood–brain barrier penetration prediction enhanced by uncertainty estimation. *J Cheminform* **14**, 44 (2022). https://doi.org/10.1186/s13321-022-00619-2
+
+```bibtext
+@article{tong2022blood,
+  title={Blood--brain barrier penetration prediction enhanced by uncertainty estimation},
+  author={Tong, Xiaochu and Wang, Dingyan and Ding, Xiaoyu and Tan, Xiaoqin and Ren, Qun and Chen, Geng and Rong, Yu and Xu, Tingyang and Huang, Junzhou and Jiang, Hualiang and others},
+  journal={Journal of Cheminformatics},
+  volume={14},
+  number={1},
+  pages={1--15},
+  year={2022},
+  publisher={BioMed Central}
+}
 ```
