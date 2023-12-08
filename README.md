@@ -96,7 +96,7 @@ Please cite our paper if you find it helpful. Thank you!
 
 Tong, X., Wang, D., Ding, X. et al. Blood–brain barrier penetration prediction enhanced by uncertainty estimation. *J Cheminform* **14**, 44 (2022). https://doi.org/10.1186/s13321-022-00619-2
 
-```bibtext
+```bibtex
 @article{tong2022blood,
   title={Blood--brain barrier penetration prediction enhanced by uncertainty estimation},
   author={Tong, Xiaochu and Wang, Dingyan and Ding, Xiaoyu and Tan, Xiaoqin and Ren, Qun and Chen, Geng and Rong, Yu and Xu, Tingyang and Huang, Junzhou and Jiang, Hualiang and others},
